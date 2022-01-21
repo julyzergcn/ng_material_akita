@@ -1,0 +1,9 @@
+<p *ngIf="isLoading$ | async; else todoList">Loading ...</p>
+
+<ng-template #todoList>
+  <ul >
+    <li *ngFor="let todo of todos$ | async">
+      {{ todo.title }} - {{ todo.complete ? 'Complete' : '' }}
+    </li>
+  </ul>  
+</ng-template>
